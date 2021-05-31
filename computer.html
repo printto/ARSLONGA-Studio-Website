@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ARSLONGA : คอมพิวเตอร์</title>
+  <!-- <link rel="shortcut icon" href="TemplateData/favicon.ico"> -->
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <meta property="og:image" content="img/logo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ARSLONGA เน้นการสอนโปรแกรมต่างๆ ให้เข้าใจง่าย
+  ด้วยการทำ Workshop พร้อมสอดแทรกเทคนิคการออกแบบ
+  จากประสบการณ์ของผู้สอนซึ่งผ่านการทำงานด้านการออกแบบ
+  มายาวนาน เพื่อให้ผู้เรียนเข้าใจใช้โปรแกรมได้จริง สามารถ
+  นำไปออกแบบ สื่อออนไลน์ เวบไซค์ สิ่งพิมพ์หรือตัดต่อ
+  ให้ดึงดูดสายตาและตรงวัตถุประสงค์ทางการตลาด">
+  <meta name="keywords" content="สอน, วาด, สีน้ำ, สีอะคริลิค, Photoshop, Illustrator, เว็บไซต์, มัลติมิเดีย, ตัวต่อตัว, html, โรงเรียน, พัฒนาการ,
+  อ่อนนุช, สวนหลวง, คลองตัน, ศรีนครินทร, ศิลปะ, คอมพิวเตอร์, กราฟฟิค, YouTube, ยูทูป, packaging, retouch, รีทัช, ออกแบบ, ตัดต่อ, วีดีโอ, บรรจุภัณฑ์, ARSLONGA, studio, ภาพ, รูป">
+</head>
+
+<body>
+
+  <div class="row">
+
+    <div class="d-block d-md-none full-width">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="footer-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Header -->
+    <div class="col-md-6">
+
+      <div class="container text-center">
+
+        <div style="position: relative;">
+          <a href="index.html">
+            <img class="cover-logo" src="img/logo_no_frame_white.png" alt="" style="z-index: 1;">
+          </a>
+        </div>
+
+        <div class="computer-header-image row" style="position: relative; overflow: hidden;">
+          <video class="video-background-raw" muted autoplay loop src="video/website_video.mp4"></video>
+          <img src="img/greytotransp.png" style="position: absolute; top: 0px; left:0px; width:100%; height: 100%; opacity: 0.9;">
+          <div class="d-flex container" style="overflow: hidden; padding: 30px; padding-top: 20%;">
+            <p class="center-p-in-div" style="z-index: 1;">
+              &lt;<span class="code-red">html</span>&gt;<br />
+
+              &emsp;&emsp;&lt;<span class="code-red">head</span>&gt;<br />
+
+              &emsp;&emsp;&emsp;&emsp;&lt;<span class="code-red">title</span>&gt;Website Course&lt;/<span class="code-red">title</span>&gt;<br />
+
+              &emsp;&emsp;&emsp;&emsp;&lt;<span class="code-red">link</span> <span class="code-orange">rel</span>=<span class="code-green">"stylesheet"</span> <span class="code-orange">href</span>=<span class="code-green">"style.css"</span>&gt;<br />
+
+              &emsp;&emsp;&lt;/<span class="code-red">head</span>&gt;<br />
+
+              &emsp;&emsp;&lt;<span class="code-red">body</span>&gt;<br />
+
+              &emsp;&emsp;&emsp;&emsp;<span style="font-size: 25px;">&lt;<span class="code-red">h1</span>
+                <span class="code-blue">id</span>=<span class="code-green">"title-text"</span>&gt; <span class="typewrite" style="margin: 0px; padding: 0px;" data-period="2000"
+                  data-type='[ "ARSLONGA", "Hello World", "HTML Website", "I love coding." ]'>
+                  <span style="margin: 0px; padding: 0px;" class="wrap"></span></span>
+                <span class="blink" style="width: 0px; margin: 0px; padding: 0px; border-left: 2px solid #fff;"></span>
+                &lt;/<span class="code-red">h1</span>&gt;</span><br />
+
+              &emsp;&emsp;&lt;/<span class="code-red">body</span>&gt;<br />
+
+              &lt;/<span class="code-red">html</span>&gt;
+            </p>
+          </div>
+        </div>
+
+        <div class="full-width cover-graphics" style="padding-bottom: 100px;">
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              HTML
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              CSS
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              Responsive
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              Multi-media
+            </div>
+          </div>
+
+          <h5 class="course-header-text">หลักสูตรสำหรับบุคคลทั่วไป</h5>
+          <table class="course-table center-table">
+            <tr>
+              <td rowspan="2">
+                HTML 5,900.-
+              </td>
+              <td colspan="2">
+                ตารางเรียน เสาร์ , อาทิตย์
+              </td>
+            </tr>
+            <tr>
+              <td>
+                หลักสูตร 20 ชั่วโมง
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                HTML + CSS 6,900.-
+              </td>
+              <td>
+                ครั้งละ 5 ชั่วโมง
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                เรียนตั้งแต่เวลา: 12:00 – 17:00 น.
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                Responsive 6,900.-
+              </td>
+              <td colspan="2">
+                LineID : <a href="http://line.me/ti/p/~arslonga-studio" class="white-link">arslonga-studio</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Mobile : <a href="tel:+66902129102" class="white-link">090 212 9102</a>
+              </td>
+            </tr>
+          </table>
+
+          <table class="course-table center-table" style="margin-top: 50px;">
+            <tr>
+              <td rowspan="6">
+                Multi-media<br />ตัดต่อวีดีโอ 3,000.-
+              </td>
+              <td colspan="2">
+                ตารางเรียน เสาร์ , อาทิตย์
+              </td>
+            </tr>
+            <tr>
+              <td>
+                หลักสูตร 10 ชั่วโมง
+              </td>
+            </tr>
+            <tr>
+              <td>
+                ครั้งละ 5 ชั่วโมง
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                เรียนตั้งแต่เวลา: 12:00 – 17:00 น.
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                LineID : <a href="http://line.me/ti/p/~arslonga-studio" class="white-link">arslonga-studio</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Mobile : <a href="tel:+66902129102" class="white-link">090 212 9102</a>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="row">
+
+        <div class="col-12">
+
+          <div class="d-none d-lg-block full-width" style="margin-top: 25px; margin-bottom: 50px;">
+            <div class="row text-center full-width">
+              <div class="col-1">
+              </div>
+              <div class="col-2">
+                <a href="about.html" class="footer-item footer-link"><strong>ABOUT</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="art.html" class="footer-item footer-link"><strong>ART</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="computer.html" class="footer-item footer-link"><strong>COMPUTER</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="graphics.html" class="footer-item footer-link"><strong>GRAPHICS</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="contact.html" class="footer-item footer-link"><strong>CONTACT</strong></a>
+              </div>
+              <div class="col-xs-1">
+              </div>
+            </div>
+          </div>
+
+          <div class="d-none d-md-block d-lg-none full-width">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <span class="navbar-brand"></span>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="footer-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-12 container" style="margin-top: 30px;">
+
+          <div class="row">
+            <div class="col-12">
+
+              <h1 id="title" style="height: 80px; vertical-align: middle;">
+                <strong>COMPUTER</strong> COURSES
+              </h1>
+
+              <h3 style="margin-top: 30px;">
+                HTML
+              </h3>
+
+              <h3>
+                HTML + CSS
+              </h3>
+
+              <h3>
+                RESPONSIVE
+              </h3>
+
+              <h3 style="margin-bottom: 20px;">
+                MULTI-MEDIA
+              </h3>
+
+              <p class="header-content kanit course-desc">
+                ARSLONGA เน้นการสอนโปรแกรมต่างๆ ให้เข้าใจง่าย
+                ด้วยการทำ Workshop พร้อมสอดแทรกเทคนิคการออกแบบ
+                จากประสบการณ์ของผู้สอนซึ่งผ่านการทำงานด้านการออกแบบ
+                มายาวนาน เพื่อให้ผู้เรียนเข้าใจใช้โปรแกรมได้จริง สามารถ
+                นำไปออกแบบ สื่อออนไลน์ เวบไซค์ สิ่งพิมพ์หรือตัดต่อ
+                ให้ดึงดูดสายตาและตรงวัตถุประสงค์ทางการตลาด
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="course-warp-box" class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <div class="learn-item course-red align-middle">
+              <strong>H</strong>TML
+            </div>
+          </div>
+          <p class="kanit course-desc">โครงสร้างของเว็บไซต์ทั้งหมดเริ่มต้นมาจาก HTML ทุกสิ่งทุกอย่างที่เราเห็นในเว็บไซต์
+            มาจาก HTML เราใช้ HTML กำหนดหน้าตาของเว็บไซต์ร่วมกับ CSS โดยใช้ HTML
+            เหมือนโครงสร้างของเว็บไซต์ และใช้ CSS มาจัดหน้าตา สี รูปร่างและตำแหน่งของเว็บไซต์</p>
+
+            <a class="course-red-text" data-toggle="collapse" href="#collapse-html" role="button" aria-expanded="false" aria-controls="collapse-html">
+              รายละเอียดคอร์ส
+            </a>
+
+          <div class="row course-red course-list-box collapse" id="collapse-html" style="padding-bottom: 20px;">
+            <div class="col-lg-6">
+              <br />แนะนำตัว HTML จะใช้งานได้อย่างไร
+              <br />โครงสร้างของภาษา HTML
+
+              <br /><br />ลองทำเว็บไซต์แบบง่ายๆ ลองสร้างเว็บ
+              ด้วยเครื่องมือง่ายๆ ที่มีอยู่ในเครื่องคอมพิวเตอร์
+              ทุกเครื่อง อย่าง notepad เพื่อให้เข้าใจว่าเว็บไซต์
+              นั้นทำงานอย่างไร
+
+              <br /><br />การสร้างตาราง, ใส่รูป, สร้างลิงก์ในเว็บไซต์
+              คำสั่งที่ใช้ในการจัดหน้าของเว็บไซต์
+
+              <br /><br />ภาษามีโครงสร้างของตัวเอง HTML
+              มีแต่ละส่วนเป็นอย่างไร
+              เรียกว่าอะไรใช้งานอย่างไร
+
+              <br /><br />จัดหน้ากระดาษด้วยคำส้่ง HTML
+              คำสั่งในการกำหนดลักษณะตัวอักษร
+              และแสดงสัญลักษณ์ต่างๆ
+              แสดงตัวอักษรในรูปแบบต่างๆ ด้วย HTML
+
+              <br /><br />Table จัดข้อมูลให้อยู่ในรูปแบบตาราง
+              คำสั่ง Table สำหรับแสดงตัวเลขหรือค่าต่างๆ
+              ที่ต้องการจัดให้อยู่ในรูปแบบตาราง
+
+            </div>
+            <div class="col-lg-6">
+              <br />เชื่อมต่อเอกสารของเราด้วย hyperlink
+              สร้างลิงก์เชื่อมโยงระหว่างเว็บเพจด้วยกัน
+              ลิงก์คือสิ่งที่ทำให้เราไปยังหน้าต่างของเว็บไซต์ได้
+              ลิงก์จะมี 2 แบบคือลิงก์ภายในเว็บไซต์
+              และลิงก์ออกไปยังเว็บไซต์อื่นๆ
+
+              <br /><br />List แสดงข้อมูลในรูปแบบรายการ
+              ลำดับต่างๆ ใน HTML
+              คำสั่งเพื่อแสดงผล
+
+              <br /><br />การแทรกรูปเข้าไปในเว็บเพจ
+              รูปมีความสำคัญกับเว็บไซต์มาก
+              เพราะจะทำความเข้าใจง่ายกว่าการอ่าน
+              และทำให้เว็บไซต์ดูน่าสนใจขึ้น
+
+              <br /><br />การใส่ภาพพื้นหลัง ให้เว็บเพจ
+
+              <br /><br />การทำให้รูปภาพเป็น hyperlink
+              การใ้ส่คำสั่งของ hyperlink ครอบคำสั่งแสดงภาพ
+
+              <br /><br />Workshop ทำเว็บไซต์โปรไฟล์ผู้เรียนด้วยความรู้ใน
+              คอร์สเรียน
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-warp-box" class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <div class="learn-item course-blue align-middle">
+              <strong>H</strong>TML + <strong>C</strong>SS
+            </div>
+          </div>
+          <p class="kanit course-desc">คอร์ส พื้นฐานการทำเว็บไซต์ รวมพื้นฐานการทำเว็บไซต์ที่จะต้องรู้ก่อนที่จะเริ่ม เรื่องของ HTML,
+            CSS สำหรับคนที่ไม่เคยทำมาก่อนควรเริ่มจากหัวข้อนี้ พื้นฐานการทำเว็บไซต์เป็นสิ่งที่สำคัญมาก
+            ในหัวข้อนี้จะเกี่ยวกับการเรียนรู้ขั้นตอนการทำเว็บไซต์ ตั้งแต่เริ่มต้น ตั้งแต่ HTML, CSS คืออะไร
+            เว็บไซต์ทำงานอย่างไร สำหรับคนที่ไม่เคยทำเว็บไซต์มาก่อนควรเริ่มศึกษา จากหัวข้อนี้ก่อน
+            เพื่อจะได้เข้าใจในเรื่องอื่นๆได้ง่ายยิ่งขึ้น</p>
+
+            <a class="course-blue-text" data-toggle="collapse" href="#collapse-css" role="button" aria-expanded="false" aria-controls="collapse-css">
+              รายละเอียดคอร์ส
+            </a>
+
+          <div class="row course-blue course-list-box collapse" id="collapse-css">
+            <div class="col-lg-6" style="padding-bottom: 20px;">
+              <br />website , webpage , home page ต่างกันยังไง
+
+              <br /><br />การใส่รูปในเว็บเพจ รูปเป็นสิ่งสำคัญมากในเว็บไซต์
+              หากเว็บไซต์มีเพียงแต่ตัวหนังสือก็คงสื่อสารข้อมูลได้
+              ไม่ครบถ้วน ลองใส่รูปในเว็บเพจกัน
+
+              <br /><br />การเชื่อมโยงเว็บเพจด้วย link
+              เว็บไซต์หนึ่งเว็บไซต์ประกอบไปด้วยไฟล์(เว็บเพจ)
+              มากมายประกอบกัน เหมือนเป็นหนังสือหนึ่งเล่มที่
+              ประกอบด้วยหน้ากระดาษมากมายหลายแผ่น
+              เว็บไซต์ก็เช่นเดียวกัน
+              ถ้าเรามีข้อมูลมากขึ้นเราก็จำเป็นจะต้องแบ่งหน้า
+              เพื่อความสะดวกในการอ่าน เช่นเดียวกับหนังสือ
+
+              <br /><br />การนำเว็บเพจที่เราสร้างขี้นมาไปเก็บไว้ที่ web hosting
+              ซึ่ง web hosting จะทำหน้าที่คอยส่งไฟล์ที่เราทำขึ้นมา
+              ไปให้คนทั่วไปได้เห็น เหมือนกับที่เราเรียกไฟล์
+              จากเครื่องของเรามาดูนั่นเอง
+
+              <br /><br />สรุปการทำเว็บไซต์
+              สรุปภาพรวมการทำเว็บไซต์เพื่อความเข้าใจกัน
+              อีกรอบนึง
+
+            </div>
+            <div class="col-lg-6">
+
+              <br />คำศัพท์ที่ควรรู้ในการทำเว็บไซต์
+
+              <br /><br />อินเทอร์เน็ต ทำความเข้าใจว่าว่าอินเทอร์เน็ต
+              web server , web hosting
+
+              <br /><br />Domain name
+              ชื่อเว็บไซต์สำคัญอย่างไร ทำไมต้องมีด้วยนะ
+              ข้อแนะนำในการทำเว็บไซต์
+              การทำเว็บไซต์ที่ดีควรทำอย่างไร เริ่มต้นจากที่ไหนดีนะ
+
+              <br /><br />Meta tags
+              ใช้อย่างไรสำคัญอย่างไรทำไมต้องมี
+
+              <br /><br />FTP (FileZilla)
+              การจะย้ายไฟล์ web site ที่เราทำทั้งหมด
+              ขึ้นไปยัง web server ที่เราได้เตรียมไว้นั้น
+              ต้องมีเครื่องมือที่ชื่อว่า FTP
+              การใช้งาน FTP ผ่าน My computer ของ window
+              เครื่องมือที่สำหรับเชื่อม Window ต่อไปยัง Web server
+              แบบง่ายๆ
+
+              <br /><br />Workshop ทำเว็บไซต์โปรไฟล์ผู้เรียนด้วยความรู้ใน
+              คอร์สเรียน
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-warp-box" class="row" style="margin-bottom: 50px;">
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <div class="learn-item course-grey align-middle">
+              <strong>R</strong>ESPONSIVE
+            </div>
+          </div>
+          <p class="kanit course-desc">คอร์ส การเขียนเว็บไซต์ขั้นสูง สำหรับผู้ที่เขียนเว็บไซค์เป็นบ้างแล้ว มีพื้นฐาน HTML
+            และ CSS เป็นการทำเว็บไซต์ให้ใช้ได้กับทุกอุปกรณ์ ทั้งแท็บเล็ตและมือถือ
+            โดยใช้เว็บเพียงเว็บไซต์เดียว ทำให้ประหยัดงบประมาณ สอนเทคนิคการทำ SEO
+            และเทคนิคที่ทำให้เว็บไซต์ข้ึ้นไปอยู่ในคำค้นหาในระดับต้นๆ</p>
+
+            <a class="course-grey-text" data-toggle="collapse" href="#collapse-responsive" role="button" aria-expanded="false" aria-controls="collapse-responsive">
+              รายละเอียดคอร์ส
+            </a>
+
+          <div class="row course-grey course-list-box collapse" id="collapse-responsive" style="padding-bottom: 20px;">
+            <div class="col-lg-6">
+
+              <br />Responsive Website เป็นเว็บไซต์รูปแบบใหม่ ซึ่งจะมีการปรับเปลี่ยนขนาดของเว็บไซต์ให้เหมาะสม
+              กับการแสดงผลบนหน้าจอขนาดต่างๆ และความละเอียดของหน้าจอในอุปกรณ์ที่แตกต่างกัน
+              เช่น คอมพิวเตอร์ โน้ตบุ๊ค โทรศัพท์มือถือ แท็บเล็ต เป็นต้น
+              ในสมัยก่อนนั้นจะออกแบบเว็บไซต์รองรับเพียงขนาดหน้า คอมพิวเตอร์ หรือที่เรียกว่า "Desktop"
+              แต่ยุคหลังๆ มานั้น โทรศัพท์มือถือสามารถใช้งานอินเตอร์เน็ตได้ เมื่อเปิดเว็บไซต์ด้วยโทรศัพท์มือถือ
+              ซึ่งมีขนาดหน้าจอ แคบกว่าคอมพิวเตอร์ ทำให้ต้องคอยเลื่อนไปทางขวา ทีศทางซ้ายทีหรือซูมเข้า
+              ซูมออกเพื่ออ่านข้อมูลในเว็บไซต ทาให้ไม่สะดวกในการใช้งานอย่างมาก
+
+            </div>
+            <div class="col-lg-6">
+
+              <br />ต่อมาจึงมีการออกแบบเว็บไซต์สำหรับอุปกรณ์มือถือที่เรียกว่า "Moblie" แยกออกมาจากเว็บหลัก
+              โดยสังเกตได้จาก URL ของเว็บไซต์ที่มักขึ้นต้นด้วย "m." (เช่น m.example.com)
+              หรือใช้ "/m/" หรือ "/mobile/" ต่อท้าย (เช่น example.com/m/ หรือ example.com/mobile/) เป็นต้น
+
+              <br /><br />สำหรับในปัจจุบันนั้น อุปกรณ์มีถือแต่ละยี่ห้อแต่ละรุ่นก็มีขนาด หน้าจอที่แตกต่างกันไป รวมถึง
+              ยังมีแท็บเล็ตเกิดขึ้นมาด้วยอีก การทำเว็บไซต์แยกสำหรับแต่ละอุปกรณ์นั้นก็ไม่ใช่ทางแก้ที่ดีนัก
+              เพราะต้องเสียเวลาและงบประมาณในการทำเว็บไซต์อย่างมาก ด้วยเหตุนี้จึงได้เกิดเทคนิค
+              การออกแบบเว็บไซต์เดียวให้รองรับทุกอุปกรณ์ซึ่งเรียกว่า "Responsive Website" นั่นเอง
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    var TxtType = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function() {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0 solid #fff}";
+      document.body.appendChild(css);
+    };
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(event) {
+      // array with texts to type in typewriter
+      var dataText = ["HTML5", "CSS STYLESHEET", "RESPONSIVE", "YOUTUBER", "COMPUTER COURSES"];
+
+      // type one text in the typwriter
+      // keeps calling itself until the text is finished
+      function typeWriter(text, i, fnCallback) {
+        // chekc if text isn't finished yet
+        if (i < (text.length)) {
+          // add next character to h1
+          document.querySelector("#title").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+          // wait for a while and call this function again for next character
+          setTimeout(function() {
+            typeWriter(text, i + 1, fnCallback)
+          }, 70);
+        }
+        // text finished, call callback if there is a callback function
+        else if (typeof fnCallback == 'function') {
+          // call callback after timeout
+          setTimeout(fnCallback, 700);
+        }
+      }
+      // start a typewriter animation for a text in the dataText array
+      function StartTextAnimation(i) {
+        if (typeof dataText[i] == 'undefined') {
+          setTimeout(function() {
+            StartTextAnimation(0);
+          }, 20000);
+        }
+        // check if dataText[i] exists
+        if (i < dataText[i].length) {
+          // text exists! start typewriter animation
+          typeWriter(dataText[i], 0, function() {
+            // after callback (and whole text has been animated), start next text
+            StartTextAnimation(i + 1);
+          });
+        }
+      }
+      // start the text animation
+      StartTextAnimation(0);
+    });
+  </script>
+
+</body>
+
+</html>

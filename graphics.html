@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ARSLONGA : กราฟฟิค</title>
+  <!-- <link rel="shortcut icon" href="TemplateData/favicon.ico"> -->
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <meta property="og:image" content="img/logo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ARSLONGA เน้นการสอนโปรแกรมต่างๆ ให้เข้าใจง่าย
+  ด้วยการทำ Workshop พร้อมสอดแทรกเทคนิคการออกแบบ
+  จากประสบการณ์ของผู้สอนซึ่งผ่านการทำงานด้านการออกแบบ
+  มายาวนาน เพื่อให้ผู้เรียนเข้าใจใช้โปรแกรมได้จริง สามารถ
+  นำไปออกแบบ สื่อออนไลน์ เวบไซค์ สิ่งพิมพ์หรือตัดต่อ
+  ให้ดึงดูดสายตาและตรงวัตถุประสงค์ทางการตลาด">
+  <meta name="keywords" content="สอน, วาด, สีน้ำ, สีอะคริลิค, Photoshop, Illustrator, เว็บไซต์, มัลติมิเดีย, ตัวต่อตัว, html, โรงเรียน, พัฒนาการ,
+  อ่อนนุช, สวนหลวง, คลองตัน, ศรีนครินทร, ศิลปะ, คอมพิวเตอร์, กราฟฟิค, YouTube, ยูทูป, packaging, retouch, รีทัช, ออกแบบ, ตัดต่อ, วีดีโอ, บรรจุภัณฑ์, ARSLONGA, studio, ภาพ, รูป">
+</head>
+
+<body>
+
+  <div class="row">
+
+    <div class="d-block d-md-none full-width">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="footer-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Header -->
+    <div class="col-md-6">
+
+      <div class="container text-center">
+
+        <div style="position: relative;">
+          <a href="index.html">
+            <img class="cover-logo" src="img/logo_no_frame_white.png" alt="">
+          </a>
+        </div>
+
+        <img src="img/cover_graphics.jpg" class="full-width" alt="Cover picture" />
+
+        <div class="full-width cover-graphics" style="padding-bottom: 100px;">
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              PHOTOSHOP
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              ILLUSTRATOR
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="learn-item-black-box align-middle">
+              PACKAGING
+            </div>
+          </div>
+
+          <h5 class="course-header-text">หลักสูตรสำหรับบุคคลทั่วไป</h5>
+          <table class="course-table center-table">
+            <tr>
+              <td rowspan="2">
+                Photoshop 5,900.-
+              </td>
+              <td colspan="2">
+                ตารางเรียน วันธรรมดา, เสาร์ , อาทิตย์
+              </td>
+            </tr>
+            <tr>
+              <td>
+                หลักสูตร 20 ชั่วโมง
+              </td>
+              <td>
+                ครั้งละ 5 ชั่วโมง
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                Illustrator 4,900.-
+              </td>
+              <td colspan="2">
+                เรียนตั้งแต่เวลา: 12:00 – 17:00 น.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                LineID : <a href="http://line.me/ti/p/~arslonga-studio" class="white-link">arslonga-studio</a>
+              </td>
+              <td>
+                Mobile : <a href="tel:+66902129102" class="white-link">090 212 9102</a>
+              </td>
+            </tr>
+          </table>
+
+          <h5 class="course-header-text">หลักสูตรเฉพาะทาง</h5>
+          <table class="course-table center-table">
+            <tr>
+              <td rowspan="4">
+                Packaging 6,900 .-
+              </td>
+              <td colspan="2">
+                ตารางเรียน เสาร์ , อาทิตย์
+              </td>
+            </tr>
+            <tr>
+              <td>
+                หลักสูตร 20 ชั่วโมง
+              </td>
+              <td>
+                ครั้งละ 5 ชั่วโมง
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                เรียนตั้งแต่เวลา: 12:00 – 17:00 น.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                LineID : <a href="http://line.me/ti/p/~arslonga-studio" class="white-link">arslonga-studio</a>
+              </td>
+              <td>
+                Mobile : <a href="tel:+66902129102" class="white-link">090 212 9102</a>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-6">
+
+      <div class="row">
+
+        <div class="col-12">
+
+          <div class="d-none d-lg-block full-width" style="margin-top: 25px; margin-bottom: 50px;">
+            <div class="row text-center full-width">
+              <div class="col-1">
+              </div>
+              <div class="col-2">
+                <a href="about.html" class="footer-item footer-link"><strong>ABOUT</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="art.html" class="footer-item footer-link"><strong>ART</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="computer.html" class="footer-item footer-link"><strong>COMPUTER</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="graphics.html" class="footer-item footer-link"><strong>GRAPHICS</strong></a>
+              </div>
+              <div class="col-2">
+                <a href="contact.html" class="footer-item footer-link"><strong>CONTACT</strong></a>
+              </div>
+              <div class="col-xs-1">
+              </div>
+            </div>
+          </div>
+
+          <div class="d-none d-md-block d-lg-none full-width">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <span class="navbar-brand"></span>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="footer-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-12 container" style="margin-top: 30px;">
+
+          <div class="row">
+            <div class="col-12">
+              <h1>
+                <strong>GRAPHIC</strong> COURSES
+              </h1>
+
+              <h3 style="margin-top: 30px;">
+                PHOTOSHOP
+              </h3>
+
+              <h3>
+                ILLUSTRATOR
+              </h3>
+
+              <h3 style="margin-bottom: 20px;">
+                PACKAGING
+              </h3>
+
+              <p class="header-content kanit course-desc">
+                ARSLONGA เน้นการสอนโปรแกรมต่างๆ ให้เข้าใจง่าย
+                ด้วยการทำ Workshop พร้อมสอดแทรกเทคนิคการออกแบบ
+                จากประสบการณ์ของผู้สอนซึ่งผ่านการทำงานด้านการออกแบบ
+                มายาวนาน เพื่อให้ผู้เรียนเข้าใจใช้โปรแกรมได้จริง สามารถ
+                นำไปออกแบบ สื่อออนไลน์ เวบไซค์ สิ่งพิมพ์หรือตัดต่อ
+                ให้ดึงดูดสายตาและตรงวัตถุประสงค์ทางการตลาด
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="course-warp-box" class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <div class="learn-item course-red align-middle">
+              <strong>P</strong>HOTOSHOP
+            </div>
+          </div>
+          <p class="kanit course-desc">โปรแกรม Photoshop เป็นโปรแกรมที่ใช้สำหรับจัดการภาพประกอบทั้งหมด เป็นพื้นฐาน
+            สำคัญของงานออกแบบทุกโปรแกรม ใช้รีทัชภาพ ปรับแสงมืดหรือสว่าง ปรับน้ำหนักภาพ
+            ปรับความนุ่มนวล ปรับความอิ่มสี ปรับรูปทรงรูปร่าง การตัดแปะภาพและการสร้างภาพขึ้นใหม่
+            เพื่อให้เหมาะสมกับวัตถุประสงค์ของสื่อที่ต้องการนำภาพไปใช้</p>
+
+          <a class="course-red-text" data-toggle="collapse" href="#collapse-photoshop" role="button" aria-expanded="false" aria-controls="collapse-photoshop">
+            รายละเอียดคอร์ส
+          </a>
+
+          <div class="row course-red course-list-box collapse" id="collapse-photoshop">
+            <div class="col-lg-6">
+              การใช้งานในส่วนของโปรแกรม Photo Shop Over all
+              <br />อธิบายงานต่างๆ ที่เหมาะสมกับ โปรแกรม
+              <br />ส่วนที่สำคัญๆ ต่างในโปรแกรม
+              <br />ชนิดและลักษณะของไฟล์
+              <br />การใช้คำสั่ง New ใน Photo shop
+              <br />การรู้จักกับ Selection และฟังชั่นต่างๆ
+              <br />การสร้าง Secletion ในแบบต่างๆ
+              <br />การใช้ Quick Selection
+              <br />การลบและเพิ่ม Selection
+              <br />สอนเทคนิคการใช้คีย์ลัดต่างๆ
+              <br />สอนในส่วนการใช้งานของ Layer
+              <br />การเพิ่มและล๊อคเลเยอร์
+              <br />การย้อมหรือ Blending ของ Mode Layer ต่างๆ
+              <br />การใส่ Effect
+              <br />การเรียนรู้ในเครื่องมือที่ใช้วาด
+              <br />การใช้ภู่กัน ดินสอิ Pentool หัวแปรงชนิดต่างๆ
+              <br />การเลือกสีจาก Swatch
+              <br />การใช้เครื่องมือตกแต่งภาพ Retouch
+              <br />การ Retouch ด้วยคำสั่ง Spot Healing Brush Tool
+              <br />การ Retouch ด้วยคำสั่ง Healing Brush Tool
+              <br />การซ่อมแซมภาพ ด้วยเครื่องมือ Path Tool
+              <br />การคัดลอกพื้นผิวด้วย Clone Stamp Tool
+              <br />การลบภาพด้วยยางลบ
+              <br />การตัดพื้นหลังของภาพออก Die Cut
+              <br />การใส่สีต่างด้วย Gardient Tool
+              <br />การทำภาพให้ Blur
+            </div>
+            <div class="col-lg-6">
+              การทำภาพให้คมชัด ด้วยคำสั่ง Sharp
+              <br />การเกลี่ยภาพลบรอยเปื้อน ด้วยคำสั่ง Smudge
+              <br />การลบสิว
+              <br />การหมุนรูปภาพ
+              <br />การย่อรูปภาพ
+              <br />การ Crop รูปภาพ
+              <br />เรียนรู้เครื่องมือการสร้างภาพ Vector
+              <br />การสร้างรูปต่างๆ เช่น Rectangle, Polygon ,
+              <br />การเปลี่ยนสีให้กับรูปร่างที่สร้าง
+              <br />การสร้างรูปร่างอิสระ
+              <br />การพิมพ์ข้อความและตัวอักษร
+              <br />การพิมพ์ข้อความในรูปแบบต่างๆ การจัดวางให้สวยงาม
+              <br />การสร้างตัวอักษรพิเศษ Warp Tool
+              <br />การปรับแต่งรูปร่างให้กับภาพ
+              <br />การเรียนรู้ในการใช้คำสั่ง Transform
+              <br />การหมุน- การย่อขยาย การยืดภาพ และอื่นๆ
+              <br />การบิดเอียงด้วยคำสั่ง Distort
+              <br />การใส่ ฟืลเตอร์ให้ผลงาน
+              <br />การปรับแสงและความคมชัด และการจัดการสีของภาพ Brightness and Contrast
+              <br />การปรับสีของภาพด้วย Color Balance
+              <br />การปรับสี่ชองภาพด้วย Hue and Saturation
+              <br />การปรับภาพด้วยคำสั่ง Level
+              <br />การปรับภาพด้วยคำสั่ง Curve
+              <br />สร้างชิ้นงาน เช่น ภาพปกเฟสบุค, ภาพสินค้า,หน้ายูทูบ นามบัตร, ป้าย ตามความต้องการของนักเรียน
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-warp-box" class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <div class="learn-item course-blue align-middle">
+              <strong>I</strong>LLUSTRATOR
+            </div>
+          </div>
+          <p class="kanit course-desc">สร้างสรรค์งาน Graphic ด้วยโปรแกรม Illustrator เหมาะสำหรับผู้ที่ต้องการเรียนรู้กระบวน
+            การออกแบบและผลิตงานสือต่างๆ สื่อสิ่งพิมพ สื่อโฆษณา แบนเนอร์ โลโก้ ผลิตภัณฑ์
+            โบชัวร์ สื่อออนไลด์ สื่อเวบไซต์ เป็นกราฟฟิคแบบ vector จึงสามารถนำไฟล์งานขนาดเล็ก
+            ไปขยายใหญ่กว่าเดิมได้ โดยภาพไม่แตก</p>
+
+          <a class="course-blue-text" data-toggle="collapse" href="#collapse-illustrator" role="button" aria-expanded="false" aria-controls="collapse-illustrator">
+            รายละเอียดคอร์ส
+          </a>
+
+          <div class="row course-blue course-list-box collapse" id="collapse-illustrator">
+            <div class="col-lg-6">
+              <br />ฝึกใช้เครื่องมือในกลุ่มต่างๆ
+              อุปกรณ์วาดรูป การสร้างรูปเรขาคณิตพื้นฐาน
+
+              <br /><br />การเคลื่อนย้ายและการจัดระดับ
+              การย้ายวัตถุด้วยคำสั่งต่างๆ (Move, Delete, Group)
+
+              <br /><br />หลักการใช้ Path ในการสร้างภาพ
+              การปรับแต่งวัตถุ (Transform) เช่น Scale, Rotate,
+              Reflect, Shear
+
+              <br /><br />Create Graphic จากเส้นเป็นภาพด้วย Pen tool
+              และการทำภาพให้มีมิติและสีสัน
+
+              <br /><br />หลักในการออกแบบตราสัญลักษณ์
+              (Logo & Trade Mark Design)
+              การใช้สี การใส่สี การทำสีให้มีมิติด้วย Gradient, Blend
+
+              <br /><br />การทำภาพโปร่งแสง (Transparency)
+              ทั้งในรูปแบบของ Blending Mode, Opacity
+              ใช้สีอย่างไรให้น่าสนใจ
+              เครื่องมือตัดหรือรวมวัตถุ Pathfinder
+
+            </div>
+            <div class="col-lg-6">
+
+              <br />เรียนรู้เครื่องมือ และการจัดการหน้า Layout
+              และการใส่ลูกเล่น (Effect)
+              รู้จักการทำงานของ Layer
+
+              ​การใส่ลูกเล่นด้วยการแก้ไขด้วย Appearance
+
+              <br /><br />การทำงานเกี่ยวกับตัวอักษร (Fonts)
+              ขนาด ระยะบรรทัด ระยะตัวอักษร
+              การจัดเสมอหน้า จับกลาง เสมอหลัง
+              และการจัด Paragraph
+              รู้จักเครื่องมือสร้างข้อความหลายรูปแบบ เช่น
+              สร้างข้อความบน Path,
+              กรอบสี่เหลี่ยม, เรขาคณิตอื่นๆ
+
+              <br /><br />การ Import ไฟล์ภาพเข้ามาใช้ด้วย,
+              คำสั่ง File place,
+              การ Export File,
+              การ Save File
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-warp-box" class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center">
+            <div class="learn-item course-grey align-middle">
+              <strong>P</strong>ACKAGING
+            </div>
+          </div>
+          <p class="kanit course-desc">เป็นการใช้่โปรแกรมIllustrator และ Photoshop ในการออกแบบบรรจุภัณฑ์
+            ซึ่งจะสอนการออกแบบบรรจุภัณฑ์ได้ทุกรูปแบบ โดยจะเริ่มเรียนรู้ตั้งแต่ พื้นฐานการออกแบบทั่วไป และนำมาประยุกต์ใช้กับงานออกแบบบรรจุภัณฑ์ เพื่อให้ได้บรรจุภัณฑ์ ที่สวยงาม
+            และมี ประโยชน์ใช้สอย ( Function ) ตรงตามต้องการของผู้บริโภค และสามารถผลิตได้จริงในระบบอุตสาหกรรม</p>
+
+            <a class="course-grey-text" data-toggle="collapse" href="#collapse-packaging" role="button" aria-expanded="false" aria-controls="collapse-packaging">
+              รายละเอียดคอร์ส
+            </a>
+
+          <div class="row course-grey course-list-box collapse" id="collapse-packaging">
+            <div class="col-lg-6">
+
+              ความสำคัญของบรรจุภัณฑ์
+              <br />การเพิ่มมูลค่าสินค้าด้วยบรรจุภัณฑ์
+              <br />หลักการและศิลปะการออกแบบบรรจุภัณฑ์
+              <br />กระบวนการออกแบบบรรจุภัณฑ์
+              <br />พื้นฐานการวาดภาพและทำแบบร่าง สำหรับการออกแบบบรรจุภัณฑ์
+              <br />ทฤษฎีสี และจิตวิทยาในการใช้สี สำหรับบรรจุภัณฑ์
+              <br />ความคิดสร้างสรรค์ Creative Thinking และ การพัฒนาความคิดสร้างสรรค์
+              <br />องค์ประกอบศิลป์
+              <br />การออกแบบ บรรจุภัณฑ์ ภายใน ( Inner Packaging )
+              <br />การออกแบบ บรรจุภัณฑ์ ภายนอก ( Outer Packaging )
+
+            </div>
+            <div class="col-lg-6">
+
+              การออกแบบ กราฟฟิค บนบรรจุภัณฑ์ ( Graphic On Packaging )
+              <br />การใช้งาน Adobe Illustrator ในการออกแบบบรรจุภัณฑ์
+              <br />การใช้งาน Adobe Photoshop ในการออกแบบบรรจุภัณฑ์
+              ​<br />ระบบการผลิตบรรจุภัณฑ์ชนิดต่างๆ
+              <br />ระบบการพิมพ์บรรจุภัณฑ์
+              <br />รู้จักกับ อย. และ GMP
+              <br />การประยุกต์ใช้งานจริง
+              <br />การสร้างแบบเพื่อการผลิตออกมาเป็นชิ้นงานจริง
+              <br />ทดลองออกแบบ และสร้างชิ้นงานจริง
+              <br />การติดต่อว่าจ้างผู้ผลิต เพื่อสั่งผลิตชิ้นงานจริง
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img src="img/pagage.jpg" class="papage">
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
