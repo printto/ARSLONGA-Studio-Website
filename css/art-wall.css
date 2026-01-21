@@ -1,0 +1,93 @@
+/* ART sliding image wall (replaces the video) */
+.containervideo.art-wall {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 260px; /* safety on very small layouts */
+  background: transparent;  /* fallback while images load */
+}
+
+/* soft overlay to match video feel */
+.containervideo.art-wall::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.12) 35%,
+    rgba(0, 0, 0, 0.30) 100%
+  ); */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.art-wall__row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  will-change: transform;
+  z-index: 1;
+}
+
+.art-wall__row:nth-child(1) { top: 0; height: 34%; }
+.art-wall__row:nth-child(2) { top: 33%; height: 34%; }
+.art-wall__row:nth-child(3) { top: 66%; height: 34%; }
+
+.art-wall__track {
+  display: flex;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-width: max-content;
+  animation: artWallScroll var(--dur, 24s) linear infinite;
+}
+
+.art-wall__row[data-reverse="1"] .art-wall__track {
+  animation-direction: reverse;
+}
+
+/* Each tile is a fixed-size “window”; image fills it */
+.art-wall__tile {
+  flex: 0 0 auto;
+  height: 100%;
+  width: 160px;              /* base width */
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  /* box-shadow: 0 10px 24px rgba(0, 0, 0, 0.20); */
+}
+
+/* a little variation for a more “wall” feel */
+.art-wall__tile.wide { width: 220px; }
+.art-wall__tile.tall { width: 140px; }
+
+.art-wall__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* key for mixed ratios */
+  display: block;
+  transform: translateZ(0);
+}
+
+/* pause on hover (optional) */
+/* .containervideo.art-wall:hover .art-wall__track {
+  animation-play-state: paused;
+} */
+.art-wall__row:hover .art-wall__track {
+  animation-play-state: paused;
+}
+
+@keyframes artWallScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* works with duplicated content */
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .art-wall__track {
+    animation: none !important;
+  }
+}
