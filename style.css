@@ -57,7 +57,7 @@ html, body {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 
   /* Extra small upper */
   .content-height {
@@ -162,10 +162,20 @@ html, body {
   transition: 0.3s;
 }
 
+.footer-link-no-hover {
+  color: black;
+  transition: 0.3s;
+}
+
 .footer-link:hover {
   color: blue;
   text-decoration: none;
-  transform: scale(2);
+  transform: scale(1.25);
+}
+
+.footer-link-no-hover:hover {
+  color: blue;
+  text-decoration: none;
 }
 
 .cover-graphics {
@@ -576,4 +586,33 @@ html, body {
 
 #promo-close-button {
   margin-top: 10px;
+}
+
+/* Remove default triangle */
+.footer-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.footer-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Match Bootstrap dropdown positioning */
+.footer-dropdown {
+  position: relative;
+}
+
+.footer-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  z-index: 2000;
+}
+
+/* Show on click */
+.footer-dropdown[open] .dropdown-menu {
+  display: block;
 }
