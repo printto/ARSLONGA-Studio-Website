@@ -1,0 +1,285 @@
+.ars-hero,
+.ars-galleries {
+  width: 100%;
+}
+
+.ars-hero {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ars-galleries {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 18px;
+  padding-bottom: 36px;
+}
+
+/* ========= HERO: Image banner with overlay text ========= */
+.ars-hero__banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  height: clamp(280px, 42vw, 460px);
+}
+
+@media (min-width: 1200px) {
+  .ars-hero__banner {
+    width: 1200px;
+    margin-top: 20px !important;
+    border-radius: 18px;
+  }
+}
+
+.ars-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: clamp(280px, 42vw, 460px);
+  object-fit: cover;
+  display: block;
+
+  opacity: 0;
+  transition: opacity 900ms ease;
+  pointer-events: none;
+}
+
+.ars-hero__bg.is-active {
+  opacity: 1;
+}
+
+.ars-hero__shade {
+  position: absolute;
+  inset: 0;
+  background: #FFFFFF00;
+  background: radial-gradient(circle,rgba(255, 255, 255, 0) 50%, rgba(100, 100, 100, 0.5) 100%);
+}
+
+/* .ars-hero__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+} */
+
+.ars-hero__content {
+  /* max-width: 840px; */
+  margin-left: auto;
+  margin-right: auto;
+  /* text-align: center; */
+  padding: 18px 12px;
+  color: #fff;
+}
+
+.ars-hero__badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-bottom: 12px;
+}
+
+.ars-hero__title {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.ars-hero__subtitle {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.96;
+}
+
+.ars-hero__actions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ========= Buttons ========= */
+.ars-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.ars-btn--primary {
+  background: #ffffff;
+  color: #111;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.ars-btn--primary:hover {
+  transform: translateY(-1px);
+  color: #111;
+}
+
+.ars-btn--ghost {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.ars-btn--ghost:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.40);
+  color: #fff;
+}
+
+/* ========= Galleries section heading ========= */
+.ars-section-title {
+  margin: 18px 0 0;
+  font-size: 22px;
+}
+
+.ars-section-subtitle {
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+/* ========= Gallery cards ========= */
+.ars-gallery {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.70);
+}
+
+.ars-gallery + .ars-gallery {
+  margin-top: 16px;
+}
+
+.ars-gallery__meta {
+  padding: 6px 0;
+}
+
+.ars-gallery__label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.ars-gallery__title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.ars-gallery__desc {
+  margin: 0;
+  margin-top: 10px !important;
+  opacity: 0.92;
+}
+
+.ars-gallery__actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ========= Steam-like showcase ========= */
+.ars-showcase__main {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.ars-showcase__mainImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: opacity 120ms ease;
+}
+
+.ars-showcase__mainImg.is-contain {
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.04); /* optional: nicer letterbox */
+}
+
+.ars-showcase__thumbs {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ars-thumb {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  padding: 0;
+  background: transparent;
+  flex: 0 0 auto;
+  width: 86px;
+  height: 54px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, opacity 120ms ease;
+  opacity: 0.92;
+}
+
+.ars-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ars-thumb:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.30);
+  opacity: 1;
+}
+
+.ars-thumb.is-active {
+  border-color: rgba(0, 0, 0, 0.55);
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .ars-gallery {
+    padding: 14px;
+  }
+}
+
+.ars-hero__below {
+  padding-top: 18px;
+  padding-bottom: 6px;
+}
+
+.ars-hero__content--below {
+  color: #111;           /* text is now on white page, not on image */
+  /* text-align: center; */
+}
+
+.ars-hero__content--below .ars-hero__badge {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.10);
+  color: #111;
+}

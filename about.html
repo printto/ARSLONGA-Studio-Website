@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>ARSLONGA : เกี่ยวกับเรา</title>
-  <!-- <link rel="shortcut icon" href="TemplateData/favicon.ico"> -->
 
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -19,6 +18,7 @@
   <link rel="stylesheet" href="font.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="css/about.css">
 
   <meta property="og:image" content="img/logo">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,15 +30,16 @@
   และเทคนิคการตัดต่อลงยูทูป ผู้เรียนสามารถนำไปประยุกต์ใช้ในงานมัลติมีเดียต่างๆ ได้ โดยมีการติดตาม ช่วยแก้ปัญหา ไม่ทอดทิ้งผู้เรียน">
   <meta name="keywords" content="สอน, วาด, สีน้ำ, สีอะคริลิค, Photoshop, Illustrator, เว็บไซต์, มัลติมิเดีย, ตัวต่อตัว, html, โรงเรียน, พัฒนาการ,
   อ่อนนุช, สวนหลวง, คลองตัน, ศรีนครินทร, ศิลปะ, คอมพิวเตอร์, กราฟฟิค, YouTube, ยูทูป, packaging, retouch, รีทัช, ออกแบบ, ตัดต่อ, วีดีโอ, บรรจุภัณฑ์, ARSLONGA, studio, ภาพ, รูป">
+
 </head>
 
 <body>
-
   <div class="row">
 
+    <!-- Mobile Nav -->
     <div class="d-block d-md-none full-width">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <span class="navbar-brand"></span>
+        <span class="navbar-brand"><img src="img/logo_no_frame.png" style="height: 40px;"></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -68,74 +69,21 @@
       </nav>
     </div>
 
-    <!-- Header -->
-    <div class="col-md-6 about-header">
-
-      <div class="container text-center">
-
-        <canvas id="unity-canvas"></canvas>
-        <div id="unity-loading-bar">
-          <div id="unity-progress-bar">
-          </div>
-        </div>
-        <script src="Build/Builds.loader.js"></script>
-        <script>
-          const maxPixelRatioMobile = 2.0;
-          const maxPixelRatioDesktop = 1.5;
-
-          var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-          var maxDevicePixelRatio = isMobile ? maxPixelRatioMobile : maxPixelRatioDesktop;
-          var pixelRatio = Math.min(window.devicePixelRatio, maxDevicePixelRatio);
-
-          var buildUrl = "Build";
-          var loaderUrl = buildUrl + "/Builds.loader.js";
-          var config = {
-            dataUrl: "Build/Builds.data",
-            frameworkUrl: "Build/Builds.framework.js",
-            codeUrl: "Build/Builds.wasm",
-            streamingAssetsUrl: "StreamingAssets",
-            companyName: "ARSLONGA",
-            productName: "ARSLONGA Gallery",
-            productVersion: "0.1",
-            devicePixelRatio: pixelRatio
-          };
-
-          var canvas = document.querySelector("#unity-canvas");
-          var loadingBar = document.querySelector("#unity-loading-bar");
-          var progressBar = document.querySelector("#unity-progress-bar");
-
-          var script = document.createElement("script");
-          script.src = loaderUrl;
-          script.onload = function() {
-            createUnityInstance(canvas, config, function(progress) {
-              progressBar.style.width = 100 * progress + "%";
-            }).then(function(unityInstance) {
-              loadingBar.style.display = "none";
-            }).catch(function(message) {
-              alert(message);
-            });
-          };
-          document.body.appendChild(script);
-        </script>
-
-        <div style="position: relative; z-index: 30;">
-          <a href="index.html">
-            <img class="cover-logo" src="img/logo_no_frame.png" alt="">
-          </a>
-        </div>
-
-      </div>
-
+    <!-- Desktop top-left logo column (kept) -->
+    <div class="d-none d-md-block col-md-6 course-desc">
+      <span class="navbar-brand">
+        <a href="index.html">
+          <img src="img/logo_no_frame.png" style="height: 40px; margin-top:8px;">
+        </a>
+      </span>
     </div>
 
-    <!-- Content -->
-    <div class="col-md-6">
-
+    <!-- Desktop nav column (kept) -->
+    <div class="col-12 col-md-6">
       <div class="row">
         <div class="col-12">
-          <div class="d-none d-lg-block full-width" style="margin-top: 25px; margin-bottom: 50px;">
+          <div class="d-none d-md-block full-width" style="margin-top: 25px; margin-bottom: 50px;">
             <div class="row text-center full-width">
-              <!-- <div class="col-1"></div> -->
 
               <div class="col-3">
                 <a href="index.html" class="footer-item footer-link"><strong>HOME</strong></a>
@@ -153,7 +101,6 @@
 
                   <div class="dropdown-menu show">
                     <a class="dropdown-item" href="art.html"><strong>Art</strong> Courses</a>
-                    <!-- <a class="dropdown-item" href="computer.html"><strong>Computer</strong> Courses</a> -->
                     <a class="dropdown-item" href="graphics.html"><strong>Graphics</strong> Courses</a>
                   </div>
                 </details>
@@ -163,72 +110,336 @@
                 <a href="contact.html" class="footer-item footer-link"><strong>CONTACT</strong></a>
               </div>
 
-              <!-- <div class="col-1"></div> -->
             </div>
           </div>
-
-          <div class="d-none d-md-block d-lg-none full-width">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <span class="navbar-brand"></span>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item active">
-                    <a class="footer-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="footer-link" href="about.html">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="footer-link" href="contact.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
         </div>
       </div>
-
-      <div class="col-12 container" style="margin-top: 30px;">
-        <div class="row">
-          <div class="col-lg-10 col-xl-8">
-
-            <h1>
-              <strong>ABOUT</strong> US
-            </h1>
-
-            <p class="header-content kanit course-desc" style="margin-top: 50px;">
-              ARSLONGA... ศิลปะยืนยาว เกิดจากกลุ่ม creative ที่ต้องการตอบแทนสังคม
-              ด้วยการนำประสบการณ์ในการทำงานอันยาวนาน จนมีความรู้ความชำนาญ
-              นำมาสอนให้กับบุคคลทั่วไป เพื่อให้มีความรู้ และเข้าใจเกี่ยวกับ art computer
-              การวาดภาพสีน้ำ การวาดภาพสีอะคริลิค การออกแบบ graphic design ด้วย Photoshop และ Illustrator
-              การเขียนเว็บไซต์ตั้งแต่ขั้นพื้นฐาน HTML จนถึงการเขียนเว็บไซต์ responsive ระดับมืออาชีพ
-              และเทคนิคการตัดต่อลงยูทูป ผู้เรียนสามารถนำไปประยุกต์ใช้ในงานมัลติมีเดียต่างๆ ได้ โดยมีการติดตาม ช่วยแก้ปัญหา ไม่ทอดทิ้งผู้เรียน
-            </p>
-
-          </div>
-
-        </div>
-      </div>
-
     </div>
 
+    <!-- HERO (Image Banner + centered overlay text)
+         Put your banner image at: img/about-banner.jpg -->
+    <section class="ars-hero" aria-label="About banner">
+      <div class="ars-hero__banner" data-hero-rotator>
+        <!-- Put 3 images here -->
+        <img class="ars-hero__bg is-active" src="img/art-course-2-web1.jpg" alt="" loading="lazy" decoding="async" style="object-position: bottom;">
+        <img class="ars-hero__bg" src="img/art-course-2-web2.jpg" alt="" loading="lazy" decoding="async" style="object-position: bottom;">
+        <img class="ars-hero__bg" src="img/art-course-2-web3.jpg" alt="" loading="lazy" decoding="async" style="object-position: bottom;">
+
+        <div class="ars-hero__shade" aria-hidden="true"></div>
+      </div>
+
+      <!-- Content OUTSIDE the banner -->
+      <div class="container ars-hero__below">
+        <div class="ars-hero__content ars-hero__content--below">
+          <h1 class="ars-hero__title">
+            <strong>ABOUT</strong> US
+          </h1>
+          <p class="ars-hero__subtitle kanit">
+            ARSLONGA… ศิลปะยืนยาว เกิดจากกลุ่ม creative ที่ต้องการตอบแทนสังคม
+            ด้วยการนำประสบการณ์ในการทำงานด้านศิลปะและงานสร้างสรรค์ที่สั่งสมมาอย่างยาวนาน
+            มาถ่ายทอดให้กับบุคคลทั่วไป เพื่อให้เกิดความเข้าใจในศิลปะอย่างแท้จริง
+          </p>
+          <p class="ars-hero__subtitle kanit">
+            การเรียนการสอนของ ARSLONGA มุ่งเน้นตั้งแต่พื้นฐานการวาดภาพจาก Still Life
+            ไปจนถึงการศึกษาการวาดภาพเหมือนจริงแบบธรรมชาติ
+            ผู้เรียนจะได้เรียนรู้ศิลปะเชิงลึก ทั้งทฤษฎีสี แสง เงา รูปทรง รวมถึงการถ่ายทอด Texture และ Material
+            เพื่อให้เข้าใจโครงสร้างของภาพและสามารถพัฒนาผลงานของตนเองได้อย่างมั่นใจ
+          </p>
+          <p class="ars-hero__subtitle kanit">
+            การสอนเป็นลักษณะใกล้ชิด ดูแลอย่างละเอียดในทุกขั้นตอน
+            จนผู้เรียนสามารถวาดภาพด้วยตนเองได้จริง และนำไปต่อยอดได้ทั้งในเชิงงานอดิเรกและงานอาชีพ
+          </p>
+          <p class="ars-hero__subtitle kanit">
+            นอกจากนี้ ARSLONGA ยังมีการจัดกิจกรรมการสอนในโอกาสต่าง ๆ
+            ไม่ว่าจะเป็นการออกไปสอนในชุมชน การจัดกิจกรรมตามเทศกาล
+            เช่น กิจกรรมให้น้อง ๆ มาร่วมวาดภาพบนเสื้อในวันแม่
+            รวมถึงการมีโอกาสได้ร่วมงาน Loving Remembrance of the Queen Mother
+            ซึ่งสะท้อนถึงความตั้งใจในการใช้ศิลปะเป็นสื่อกลางในการสร้างคุณค่าให้กับสังคม
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERIES -->
+    <section class="ars-galleries container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="ars-section-title">
+            <strong>GALLERY</strong> HIGHLIGHTS
+          </h2>
+          <p class="ars-section-subtitle kanit">
+            ตัวอย่างผลงาน บรรยากาศการเรียน และกิจกรรมต่างๆ
+          </p>
+        </div>
+      </div>
+
+      <!-- Gallery 1 -->
+      <div class="ars-gallery row" data-gallery="art">
+        <div class="col-12 col-lg-7">
+          <div class="ars-showcase" data-showcase>
+            <div class="ars-showcase__main">
+              <img class="ars-showcase__mainImg" src="img/img26/1.jpg" alt="Art gallery preview" data-main>
+            </div>
+
+            <div class="ars-showcase__thumbs" data-thumbs>
+              <button type="button" class="ars-thumb is-active" data-src="img/img26/1.jpg" aria-label="Preview 1">
+                <img src="img/img26/1.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/2.jpg" aria-label="Preview 2">
+                <img src="img/img26/2.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/7.jpg" aria-label="Preview 3">
+                <img src="img/img26/7.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/19.jpg" aria-label="Preview 4">
+                <img src="img/img26/19.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/18.jpg" aria-label="Preview 5">
+                <img src="img/img26/18.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/21.jpg" aria-label="Preview 6">
+                <img src="img/img26/21.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/6.jpg" aria-label="Preview 7">
+                <img src="img/img26/6.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/img26/15.jpg" aria-label="Preview 8">
+                <img src="img/img26/15.jpg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="ars-gallery__meta">
+            <div class="ars-gallery__label">ARSLONGA | พัฒนาการ 38</div>
+            <h3 class="ars-gallery__title">บรรยากาศการเรียนการสอน</h3>
+            <p class="ars-gallery__desc kanit">
+              สอนศิลปะ การวาดจาก Still Life
+              เพื่อศึกษาการวาดภาพเหมือนจริงแบบธรรมชาติ
+            </p>
+            <p class="ars-gallery__desc kanit">
+              ทฤษฏีสี แสง เงา รูปทรง Texture Material<br />
+              สอนแบบใกล้ชิด ละเอียดจนสามารถวาดภาพเองได้
+            </p>
+            <div class="ars-gallery__actions">
+              <a class="ars-btn ars-btn--primary" href="art.html">Go to Art Courses</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery 2 -->
+      <div class="ars-gallery row" data-gallery="mother">
+        <div class="col-12 col-lg-7">
+          <div class="ars-showcase" data-showcase>
+            <div class="ars-showcase__main">
+              <img class="ars-showcase__mainImg" src="img/about/mother/1.jpg" alt="Mother gallery preview" data-main>
+            </div>
+
+            <div class="ars-showcase__thumbs" data-thumbs>
+              <button type="button" class="ars-thumb is-active" data-src="img/about/mother/1.jpg" aria-label="Preview 1">
+                <img src="img/about/mother/1.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/2.jpg" aria-label="Preview 2">
+                <img src="img/about/mother/2.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/3.jpg" aria-label="Preview 3" data-contain="true">
+                <img src="img/about/mother/3.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/4.jpg" aria-label="Preview 4" data-contain="true">
+                <img src="img/about/mother/4.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/5.jpg" aria-label="Preview 5">
+                <img src="img/about/mother/5.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/6.jpg" aria-label="Preview 6" data-contain="true">
+                <img src="img/about/mother/6.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/7.jpg" aria-label="Preview 7" data-contain="true">
+                <img src="img/about/mother/7.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/8.jpg" aria-label="Preview 8" data-contain="true">
+                <img src="img/about/mother/8.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/mother/9.jpg" aria-label="Preview 9" data-contain="true">
+                <img src="img/about/mother/9.jpg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="ars-gallery__meta">
+            <div class="ars-gallery__label">WORKSHOP ACTIVITY</div>
+            <h3 class="ars-gallery__title">Mother's Day - Shirt Painting</h3>
+            <p class="ars-gallery__desc kanit">
+              กิจกรรมสอนน้องๆ วาดเสื้อ ในวันแม่แห่งชาติ<br />สามารถนำผลงานที่ทำเองมอบให้แม่ได้ในวันแม่ เข้าร่วมฟรี
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery 3 -->
+      <div class="ars-gallery row" data-gallery="paper">
+        <div class="col-12 col-lg-7">
+          <div class="ars-showcase" data-showcase>
+            <div class="ars-showcase__main">
+              <img class="ars-showcase__mainImg" src="img/about/paper/1.jpg" alt="Paper gallery preview" data-main>
+            </div>
+
+            <div class="ars-showcase__thumbs" data-thumbs>
+              <button type="button" class="ars-thumb is-active" data-src="img/about/paper/1.jpg" aria-label="Preview 1">
+                <img src="img/about/paper/1.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/paper/2.jpg" aria-label="Preview 2">
+                <img src="img/about/paper/2.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/paper/3.jpg" aria-label="Preview 3">
+                <img src="img/about/paper/3.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/paper/4.jpg" aria-label="Preview 4">
+                <img src="img/about/paper/4.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/paper/5.jpg" aria-label="Preview 5">
+                <img src="img/about/paper/5.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/paper/6.jpg" aria-label="Preview 6">
+                <img src="img/about/paper/6.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/paper/7.jpg" aria-label="Preview 7">
+                <img src="img/about/paper/7.jpg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="ars-gallery__meta">
+            <div class="ars-gallery__label">WORKSHOP ACTIVITY</div>
+            <h3 class="ars-gallery__title">Paper Mache Workshop at<br />Nonthaburi Home For the Destitute</h3>
+            <p class="ars-gallery__desc kanit">
+              กิจกรรมสอนเปเปอร์มาเช่ที่สถานคุ้มครองคนไร้ที่พึ่งนนทบุรี
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery 4 -->
+      <div class="ars-gallery row" data-gallery="queen">
+        <div class="col-12 col-lg-7">
+          <div class="ars-showcase" data-showcase>
+            <div class="ars-showcase__main">
+              <img class="ars-showcase__mainImg" src="img/about/queen/6.jpg" alt="Queen gallery preview" data-main>
+            </div>
+
+            <div class="ars-showcase__thumbs" data-thumbs>
+              <button type="button" class="ars-thumb is-active" data-src="img/about/queen/6.jpg" aria-label="Preview 6" data-contain="true">
+                <img src="img/about/queen/6.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/7.jpg" aria-label="Preview 7">
+                <img src="img/about/queen/7.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/3.jpg" aria-label="Preview 3">
+                <img src="img/about/queen/3.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/1.jpg" aria-label="Preview 1">
+                <img src="img/about/queen/1.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/2.jpg" aria-label="Preview 2">
+                <img src="img/about/queen/2.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/4.jpg" aria-label="Preview 4">
+                <img src="img/about/queen/4.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/5.jpg" aria-label="Preview 5">
+                <img src="img/about/queen/5.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/8.jpg" aria-label="Preview 8">
+                <img src="img/about/queen/8.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/9.jpg" aria-label="Preview 9">
+                <img src="img/about/queen/9.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/10.jpg" aria-label="Preview 10" data-contain="true">
+                <img src="img/about/queen/10.jpg" alt="">
+              </button>
+              <button type="button" class="ars-thumb" data-src="img/about/queen/11.jpg" aria-label="Preview 11" data-contain="true">
+                <img src="img/about/queen/11.jpg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="ars-gallery__meta">
+            <div class="ars-gallery__label">CONVENTION</div>
+            <h3 class="ars-gallery__title">Loving Remembrance of the Queen Mother</h3>
+            <p class="ars-gallery__desc kanit">
+              กิจกรรมสอนเปเปอร์มาเช่ที่สถานคุ้มครองคนไร้ที่พึ่งนนทบุรี
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
   </div>
 
-  </div>
+  <!-- FULL JS (safe to move to bottom before </body>) -->
+  <script>
+    (function() {
+      function initShowcase(showcaseEl) {
+        var mainImg = showcaseEl.querySelector("[data-main]");
+        var thumbsWrap = showcaseEl.querySelector("[data-thumbs]");
+        if (!mainImg || !thumbsWrap) return;
 
+        var buttons = Array.prototype.slice.call(thumbsWrap.querySelectorAll("[data-src]"));
+
+        function setActive(btn) {
+          buttons.forEach(function(b) {
+            b.classList.remove("is-active");
+          });
+          btn.classList.add("is-active");
+        }
+
+        function applyContainFlag(btn) {
+          var wantContain = btn.getAttribute("data-contain") === "true";
+          mainImg.classList.toggle("is-contain", wantContain);
+        }
+
+        buttons.forEach(function(btn) {
+          btn.addEventListener("click", function() {
+            var src = btn.getAttribute("data-src");
+            if (!src) return;
+
+            // Update active + contain immediately (so layout mode is correct during fade)
+            setActive(btn);
+            applyContainFlag(btn);
+
+            if (mainImg.getAttribute("src") === src) return;
+
+            mainImg.style.opacity = "0.2";
+
+            var img = new Image();
+            img.onload = function() {
+              mainImg.setAttribute("src", src);
+              mainImg.style.opacity = "1";
+            };
+            img.src = src;
+          });
+        });
+
+        // Initial state: respect contain on the initially active thumb (if any)
+        var initial = thumbsWrap.querySelector(".ars-thumb.is-active") || buttons[0];
+        if (initial) applyContainFlag(initial);
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var showcases = document.querySelectorAll("[data-showcase]");
+        Array.prototype.forEach.call(showcases, initShowcase);
+      });
+    })();
+  </script>
 </body>
 
 </html>

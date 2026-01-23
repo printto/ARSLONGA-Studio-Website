@@ -1,6 +1,12 @@
+html, body {
+  min-height: 100vh;
+}
+
 .containervideo.art-wall {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  overflow: visible !important;
   height: 100%;
   min-height: 260px;
   background: transparent;
@@ -20,8 +26,10 @@
   right: 0;
   display: flex;
   padding: 10px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   z-index: 1;
+  transition: z-index 1s;
 }
 
 .art-wall__row:nth-child(1) { top: 0;  height: 34%; }
@@ -59,6 +67,10 @@
   display: block;
 }
 
+.art-wall__row:hover {
+  z-index: 999;
+}
+
 .art-wall__row:hover .art-wall__track {
   animation-play-state: paused;
 }
@@ -74,5 +86,46 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .art-wall__track { animation: none !important; }
+  .art-wall__track {
+    animation: none !important;
+  }
+}
+
+.art-wall__row, .art-wall__set {
+  overflow: visible !important;
+}
+
+.art-wall__tile {
+  transition: 1s;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.art-wall__tile:hover {
+  transform: scale(1.5);
+  z-index: 999;
+  border-radius: 2px !important;
+  height: 20vh;
+}
+
+.art-wall__tile img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  object-fit: cover;
+}
+
+.art-wall__tile:hover img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+  transform: translateY(-50%);
+  border-radius: 3px;
 }

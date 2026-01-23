@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr" class="notranslate">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ARSLONGA : เกี่ยวกับเรา</title>
+  <!-- <link rel="shortcut icon" href="TemplateData/favicon.ico"> -->
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <meta property="og:image" content="img/logo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ARSLONGA... ศิลปะยืนยาว เกิดจากกลุ่ม creative ที่ต้องการตอบแทนสังคม
+  ด้วยการนำประสบการณ์ในการทำงานอันยาวนาน จนมีความรู้ความชำนาญ
+  นำมาสอนให้กับบุคคลทั่วไป เพื่อให้มีความรู้ และเข้าใจเกี่ยวกับ art computer
+  การวาดภาพสีน้ำ การวาดภาพสีอะคริลิค การออกแบบ graphic design ด้วย Photoshop และ Illustrator
+  การเขียนเว็บไซต์ตั้งแต่ขั้นพื้นฐาน HTML จนถึงการเขียนเว็บไซต์ responsive ระดับมืออาชีพ
+  และเทคนิคการตัดต่อลงยูทูป ผู้เรียนสามารถนำไปประยุกต์ใช้ในงานมัลติมีเดียต่างๆ ได้ โดยมีการติดตาม ช่วยแก้ปัญหา ไม่ทอดทิ้งผู้เรียน">
+  <meta name="keywords" content="สอน, วาด, สีน้ำ, สีอะคริลิค, Photoshop, Illustrator, เว็บไซต์, มัลติมิเดีย, ตัวต่อตัว, html, โรงเรียน, พัฒนาการ,
+  อ่อนนุช, สวนหลวง, คลองตัน, ศรีนครินทร, ศิลปะ, คอมพิวเตอร์, กราฟฟิค, YouTube, ยูทูป, packaging, retouch, รีทัช, ออกแบบ, ตัดต่อ, วีดีโอ, บรรจุภัณฑ์, ARSLONGA, studio, ภาพ, รูป">
+</head>
+
+<body>
+
+  <div class="row">
+
+    <div class="d-block d-md-none full-width">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="footer-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="footer-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Header -->
+    <div class="col-md-6 about-header">
+
+      <div class="container text-center">
+
+        <canvas id="unity-canvas"></canvas>
+        <div id="unity-loading-bar">
+          <div id="unity-progress-bar">
+          </div>
+        </div>
+        <script src="Build/Builds.loader.js"></script>
+        <script>
+          const maxPixelRatioMobile = 2.0;
+          const maxPixelRatioDesktop = 1.5;
+
+          var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          var maxDevicePixelRatio = isMobile ? maxPixelRatioMobile : maxPixelRatioDesktop;
+          var pixelRatio = Math.min(window.devicePixelRatio, maxDevicePixelRatio);
+
+          var buildUrl = "Build";
+          var loaderUrl = buildUrl + "/Builds.loader.js";
+          var config = {
+            dataUrl: "Build/Builds.data",
+            frameworkUrl: "Build/Builds.framework.js",
+            codeUrl: "Build/Builds.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "ARSLONGA",
+            productName: "ARSLONGA Gallery",
+            productVersion: "0.1",
+            devicePixelRatio: pixelRatio
+          };
+
+          var canvas = document.querySelector("#unity-canvas");
+          var loadingBar = document.querySelector("#unity-loading-bar");
+          var progressBar = document.querySelector("#unity-progress-bar");
+
+          var script = document.createElement("script");
+          script.src = loaderUrl;
+          script.onload = function() {
+            createUnityInstance(canvas, config, function(progress) {
+              progressBar.style.width = 100 * progress + "%";
+            }).then(function(unityInstance) {
+              loadingBar.style.display = "none";
+            }).catch(function(message) {
+              alert(message);
+            });
+          };
+          document.body.appendChild(script);
+        </script>
+
+        <div style="position: relative; z-index: 30;">
+          <a href="index.html">
+            <img class="cover-logo" src="img/logo_no_frame.png" alt="">
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-6">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="d-none d-lg-block full-width" style="margin-top: 25px; margin-bottom: 50px;">
+            <div class="row text-center full-width">
+              <!-- <div class="col-1"></div> -->
+
+              <div class="col-3">
+                <a href="index.html" class="footer-item footer-link"><strong>HOME</strong></a>
+              </div>
+
+              <div class="col-3">
+                <a href="about.html" class="footer-item footer-link"><strong>ABOUT</strong></a>
+              </div>
+
+              <div class="col-3">
+                <details class="dropdown footer-dropdown">
+                  <summary class="footer-item footer-link">
+                    <strong>COURSES</strong>
+                  </summary>
+
+                  <div class="dropdown-menu show">
+                    <a class="dropdown-item" href="art.html"><strong>Art</strong> Courses</a>
+                    <!-- <a class="dropdown-item" href="computer.html"><strong>Computer</strong> Courses</a> -->
+                    <a class="dropdown-item" href="graphics.html"><strong>Graphics</strong> Courses</a>
+                  </div>
+                </details>
+              </div>
+
+              <div class="col-3">
+                <a href="contact.html" class="footer-item footer-link"><strong>CONTACT</strong></a>
+              </div>
+
+              <!-- <div class="col-1"></div> -->
+            </div>
+          </div>
+
+          <div class="d-none d-md-block d-lg-none full-width">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <span class="navbar-brand"></span>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="footer-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="art.html"><strong>Art</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="computer.html"><strong>Computer</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="graphics.html"><strong>Graphics</strong> Course</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="footer-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 container" style="margin-top: 30px;">
+        <div class="row">
+          <div class="col-lg-10 col-xl-8">
+
+            <h1>
+              <strong>ABOUT</strong> US
+            </h1>
+
+            <p class="header-content kanit course-desc" style="margin-top: 50px;">
+              ARSLONGA... ศิลปะยืนยาว เกิดจากกลุ่ม creative ที่ต้องการตอบแทนสังคม
+              ด้วยการนำประสบการณ์ในการทำงานอันยาวนาน จนมีความรู้ความชำนาญ
+              นำมาสอนให้กับบุคคลทั่วไป เพื่อให้มีความรู้ และเข้าใจเกี่ยวกับ art computer
+              การวาดภาพสีน้ำ การวาดภาพสีอะคริลิค การออกแบบ graphic design ด้วย Photoshop และ Illustrator
+              การเขียนเว็บไซต์ตั้งแต่ขั้นพื้นฐาน HTML จนถึงการเขียนเว็บไซต์ responsive ระดับมืออาชีพ
+              และเทคนิคการตัดต่อลงยูทูป ผู้เรียนสามารถนำไปประยุกต์ใช้ในงานมัลติมีเดียต่างๆ ได้ โดยมีการติดตาม ช่วยแก้ปัญหา ไม่ทอดทิ้งผู้เรียน
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+</body>
+
+</html>
