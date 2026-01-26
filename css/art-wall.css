@@ -1,15 +1,23 @@
 html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
 }
 
 .containervideo.art-wall {
   position: relative;
-  overflow-x: hidden !important;
-  overflow-y: visible !important;
-  overflow: visible !important;
+  width: 100%;
   height: 100%;
-  min-height: 260px;
+  min-height: 0;
   background: transparent;
+  overflow: visible;
+  z-index: 10;
 }
 
 .containervideo.art-wall::after {
@@ -26,13 +34,12 @@ html, body {
   right: 0;
   display: flex;
   padding: 10px;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: visible;
   z-index: 1;
   transition: z-index 1s;
 }
 
-.art-wall__row:nth-child(1) { top: 0;  height: 34%; }
+.art-wall__row:nth-child(1) { top: 0; height: 34%; }
 .art-wall__row:nth-child(2) { top: 33%; height: 34%; }
 .art-wall__row:nth-child(3) { top: 66%; height: 34%; }
 
@@ -51,20 +58,25 @@ html, body {
 .art-wall__tile {
   flex: 0 0 auto;
   height: 100%;
-  width: 160px;
-  border-radius: 10px;
+  width: auto;
+  border-radius: 1vh;
   overflow: hidden;
   background: transparent;
+  transform: scale(1);
+  transition: transform 0.5s, border-radius 1s, z-index 0.5s;
+  z-index: 1;
+  position: relative;
 }
 
-.art-wall__tile.wide { width: 220px; }
-.art-wall__tile.tall { width: 140px; }
+.art-wall__tile.wide {}
+.art-wall__tile.tall {}
 
 .art-wall__tile img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
+  width: auto;
   display: block;
+  object-fit: contain;
+  position: static;
 }
 
 .art-wall__row:hover {
@@ -75,57 +87,24 @@ html, body {
   animation-play-state: paused;
 }
 
+.art-wall__tile:hover {
+  transform: scale(1.5);
+  z-index: 999;
+  border-radius: 2px;
+}
+
 @keyframes artWallScrollX {
-  from { transform: translateX(0px); }
-  to   { transform: translateX(calc(-1 * var(--shift, 0px))); }
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-1 * var(--shift, 0px))); }
 }
 
 @keyframes artWallScrollXReverse {
   from { transform: translateX(calc(-1 * var(--shift, 0px))); }
-  to   { transform: translateX(0px); }
+  to { transform: translateX(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .art-wall__track {
     animation: none !important;
   }
-}
-
-.art-wall__row, .art-wall__set {
-  overflow: visible !important;
-}
-
-.art-wall__tile {
-  transition: 1s;
-  transform: scale(1);
-  z-index: 1;
-}
-
-.art-wall__tile:hover {
-  transform: scale(1.5);
-  z-index: 999;
-  border-radius: 2px !important;
-  height: 20vh;
-}
-
-.art-wall__tile img {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-50%);
-  object-fit: cover;
-}
-
-.art-wall__tile:hover img {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #000;
-  transform: translateY(-50%);
-  border-radius: 3px;
 }

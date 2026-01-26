@@ -25,7 +25,9 @@ html, body {
 }
 
 .content-height {
-  height: 40vh;
+  flex: 1;        /* take remaining space */
+  height: auto;   /* override old vh */
+  min-height: 260px;
 }
 
 .header-height {
@@ -134,7 +136,9 @@ html, body {
   position: fixed;
   bottom: 0px;
   height: 100px;
-  background-color: white;
+  /* background-color: white; */
+  background: #FFFFFF00;
+  background: linear-gradient(0deg,rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
   z-index: 2;
 }
 
@@ -615,4 +619,29 @@ html, body {
 /* Show on click */
 .footer-dropdown[open] .dropdown-menu {
   display: block;
+}
+
+.nav-xs .footer-item {
+  position: static;
+  top: auto;
+  right: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  font-size: 13px;
+}
+
+.nav-xs .row {
+  height: auto !important;
+}
+
+.nav-xs .col-3 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav-xs .footer-link:hover {
+  transform: none;
 }
