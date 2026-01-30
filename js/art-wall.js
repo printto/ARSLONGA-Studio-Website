@@ -30,18 +30,6 @@
         img.src = src;
         img.alt = "";
 
-        img.addEventListener(
-          "load",
-          () => {
-            if (img.naturalHeight > img.naturalWidth) {
-              img.classList.add("is-portrait");
-            } else {
-              img.classList.remove("is-portrait");
-            }
-          },
-          { once: true }
-        );
-
         tile.appendChild(img);
         set.appendChild(tile);
       });
