@@ -10,6 +10,28 @@ body {
   overflow-y: hidden;
 }
 
+/* Mobile + tablet: fit the *visible* viewport.
+   100vh is measured with the browser toolbar hidden, so on phones and tablets it
+   is taller than the screen and the bottom row gets clipped. 100dvh is the real
+   visible height. Letting .content-height flex (instead of a fixed 62vh with a
+   260px floor) means the wall shrinks to whatever space is left after the header
+   rather than overflowing it. Desktop (>=1200px) keeps its existing sizing. */
+@media (max-width: 1199.98px) {
+  html, body {
+    height: 100dvh;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  .content-height {
+    height: auto;
+    min-height: 0;
+    flex: 1 1 auto;
+  }
+}
+
 .containervideo.art-wall {
   position: relative;
   width: 100%;
