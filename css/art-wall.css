@@ -55,6 +55,36 @@ body {
   animation-name: artWallScrollXReverse;
 }
 
+/* ---- Fixed-loop variant (iPhone + iPad) ----
+   WebKit choked on the desktop approach (runtime width measurement, cloned
+   <img>s, and a custom property referenced inside @keyframes). art-wall-ios.js
+   and art-wall-ipad.js add .art-wall--fixed and render a fixed number of
+   identical sets; here the track loops by a fixed percentage instead.
+   Desktop/Android are untouched. */
+/* iOS/iPad build (art-wall-ios.js / art-wall-ipad.js): there is no wide track at
+   all. Each image exists once as an absolutely-positioned tile that the script
+   moves and recycles, so WebKit only ever rasterizes a handful of small layers
+   instead of one enormous strip. Desktop keeps its own markup and animation. */
+.art-wall--fixed .art-wall__row {
+  overflow: hidden;
+  display: block;
+}
+
+.art-wall--fixed .art-wall__tile {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  height: auto;
+  /* Script drives translateX; no CSS transition, or every recycle would animate. */
+  transition: none;
+}
+
+.art-wall--fixed .art-wall__tile img {
+  height: 100%;
+  width: auto;
+}
+
 .art-wall__tile {
   flex: 0 0 auto;
   height: 100%;
@@ -93,6 +123,7 @@ body {
   border-radius: 2px;
 }
 
+/* Desktop / Android: shift by a JS-measured pixel width (--shift). */
 @keyframes artWallScrollX {
   from { transform: translateX(0); }
   to { transform: translateX(calc(-1 * var(--shift, 0px))); }
@@ -100,6 +131,19 @@ body {
 
 @keyframes artWallScrollXReverse {
   from { transform: translateX(calc(-1 * var(--shift, 0px))); }
+  to { transform: translateX(0); }
+}
+
+/* iOS: track holds 4 identical sets (COPIES in js/art-wall.js), so one set is
+   exactly 25% of the track. A fixed percentage avoids the var()-in-@keyframes
+   issue on WebKit. Keep -25% in sync with COPIES = 4. */
+@keyframes artWallScrollXFixed {
+  from { transform: translateX(0); }
+  to { transform: translateX(-25%); }
+}
+
+@keyframes artWallScrollXFixedReverse {
+  from { transform: translateX(-25%); }
   to { transform: translateX(0); }
 }
 

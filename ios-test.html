@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iOS layout support test</title>
+  <style>
+    /* Replicates the exact nesting used by the art wall. */
+    html, body { height: 100%; margin: 0; }
+    body { min-height: 100vh; display: flex; flex-direction: column; font: 13px/1.4 monospace; }
+
+    /* .row.content-height — Bootstrap .row is display:flex, and .col-12 stretches
+       to its height. Both are required or the % chain cannot resolve. */
+    #probe-wrap { flex: 1; height: auto; min-height: 260px; display: flex; flex-wrap: wrap; }
+    #probe-col  { padding: 0; flex: 0 0 100%; max-width: 100%; }  /* .col-12 */
+    #probe-wall { position: relative; width: 100%; height: 100%; min-height: 0; }
+    #probe-row  { position: absolute; left: 0; right: 0; top: 0; height: 34%; display: flex; padding: 10px; }
+    #probe-track{ display: flex; gap: 10px; width: max-content; }
+    .probe-tile { flex: 0 0 auto; height: 100%; width: auto; overflow: hidden; position: relative; }
+    .probe-tile img { height: 100%; width: auto; display: block; object-fit: contain; }
+
+    #out { flex: 0 0 auto; background: #000; color: #0f0; padding: 10px; white-space: pre-wrap; word-break: break-word; }
+    .bad { color: #f55; }
+  </style>
+</head>
+
+<body>
+
+  <div id="probe-wrap">
+    <div id="probe-col">
+      <div id="probe-wall">
+        <div id="probe-row">
+          <div id="probe-track">
+            <div class="probe-tile"><img src="img/img26-ios/1.jpg" alt=""></div>
+            <div class="probe-tile"><img src="img/img26-ios/2.jpg" alt=""></div>
+            <div class="probe-tile"><img src="img/img26-ios/3.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pre id="out">running…</pre>
+
+  <script>
+    function run() {
+      var L = [];
+      var w = function (s) { L.push(s); };
+
+      w("UA: " + navigator.userAgent);
+      w("platform=" + navigator.platform + "  touch=" + navigator.maxTouchPoints +
+        "  dpr=" + window.devicePixelRatio + "  win=" + innerWidth + "x" + innerHeight);
+      w("");
+
+      // ---- A. CSS feature support ----
+      w("--- A. CSS.supports ---");
+      var feats = [
+        ["width: max-content", "width", "max-content"],
+        ["width: -webkit-max-content", "width", "-webkit-max-content"],
+        ["gap (flex)", "gap", "10px"],
+        ["inset", "inset", "0px"],
+        ["object-fit", "object-fit", "contain"],
+        ["aspect-ratio", "aspect-ratio", "1 / 1"],
+        ["will-change", "will-change", "transform"],
+        ["position: sticky", "position", "sticky"],
+        ["transform translateX(%)", "transform", "translateX(-25%)"],
+        ["overflow: clip", "overflow", "clip"]
+      ];
+      feats.forEach(function (f) {
+        var ok = window.CSS && CSS.supports ? CSS.supports(f[1], f[2]) : "no CSS.supports";
+        w((ok === true ? "  OK   " : "  FAIL ") + f[0] + " = " + ok);
+      });
+      w("");
+
+      // ---- B. the percentage-height chain (this drives every width) ----
+      w("--- B. height chain (widths derive from these) ---");
+      var ids = ["probe-wrap", "probe-col", "probe-wall", "probe-row", "probe-track"];
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        var r = el.getBoundingClientRect();
+        w("  " + id.padEnd(12) + " h=" + Math.round(r.height) + "  w=" + Math.round(r.width));
+      });
+
+      var tile = document.querySelector(".probe-tile");
+      var img = tile.querySelector("img");
+      var tr = tile.getBoundingClientRect();
+      var ir = img.getBoundingClientRect();
+      w("  tile         h=" + Math.round(tr.height) + "  w=" + Math.round(tr.width));
+      w("  img          h=" + Math.round(ir.height) + "  w=" + Math.round(ir.width));
+      w("  img natural  " + img.naturalWidth + "x" + img.naturalHeight + "  complete=" + img.complete);
+      w("");
+
+      // ---- C. verdicts ----
+      w("--- C. verdicts ---");
+      var rowH = document.getElementById("probe-row").getBoundingClientRect().height;
+      var trackW = document.getElementById("probe-track").getBoundingClientRect().width;
+
+      w((rowH > 10 ? "  OK   " : "  FAIL ") + "row resolved a height from % chain (" + Math.round(rowH) + "px)");
+      w((tr.width > 10 ? "  OK   " : "  FAIL ") + "tile got a width from its height (" + Math.round(tr.width) + "px)");
+      w((trackW > 10 ? "  OK   " : "  FAIL ") + "max-content track width (" + Math.round(trackW) + "px)");
+
+      // is the image scaled to the box, or rendering at natural size?
+      if (img.naturalHeight) {
+        var expectedW = ir.height * (img.naturalWidth / img.naturalHeight);
+        var okAspect = Math.abs(expectedW - ir.width) < 4;
+        w((okAspect ? "  OK   " : "  FAIL ") + "img width matches aspect x height (got " +
+          Math.round(ir.width) + ", expected " + Math.round(expectedW) + ")");
+        var natural = Math.abs(ir.height - img.naturalHeight) < 2;
+        w((natural ? "  WARN " : "  OK   ") + "img is " + (natural ? "at NATURAL size (height:100% did NOT apply)" : "scaled by CSS height"));
+      }
+
+      // ---- D. programmatic scrolling on overflow:hidden ----
+      var sc = document.createElement("div");
+      sc.style.cssText = "overflow:hidden;width:100px;position:absolute;left:-9999px;top:0;";
+      var inner = document.createElement("div");
+      inner.style.cssText = "width:1000px;height:20px;";
+      sc.appendChild(inner);
+      document.body.appendChild(sc);
+      sc.scrollLeft = 50;
+      var got = sc.scrollLeft;
+      document.body.removeChild(sc);
+      w((got === 50 ? "  OK   " : "  FAIL ") + "scrollLeft on overflow:hidden (set 50, read " + got + ")");
+
+      document.getElementById("out").textContent = L.join("\n");
+    }
+
+    window.addEventListener("load", function () { setTimeout(run, 1200); });
+  </script>
+
+</body>
+
+</html>

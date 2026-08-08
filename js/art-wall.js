@@ -1,5 +1,19 @@
 (function () {
+  // iPhone and iPad have their own builders (art-wall-ios.js / art-wall-ipad.js),
+  // which handle WebKit's issues with runtime measuring + cloned images. This
+  // desktop/Android version stays as the original and simply steps aside for them.
+  function handledByDeviceFile() {
+    const ua = navigator.userAgent || "";
+    const isIPhone = /iPhone|iPod/.test(ua);
+    const isIPad =
+      /iPad/.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    return isIPhone || isIPad;
+  }
+
   function init() {
+    if (handledByDeviceFile()) return;
+
     const wall = document.querySelector(".containervideo.art-wall");
     if (!wall) return;
 
