@@ -17,7 +17,12 @@
   const isIPhone = /iPhone|iPod/.test(ua);
   if (!isIPhone) return;
 
-  const GAP = 10; // horizontal space between tiles, matches the desktop look
+  function gapFor(wall, rowEl) {
+    const rowH = rowEl.getBoundingClientRect().height;
+    const gap = rowH > 0 ? Math.max(3, Math.min(10, rowH * 0.045)) : 10;
+    wall.style.setProperty("--art-wall-gap", `${gap}px`);
+    return gap;
+  }
 
   function buildImages(path, from, to) {
     const images = [];
@@ -53,12 +58,13 @@
     function measure() {
       const w = tiles.map((t) => t.getBoundingClientRect().width);
       if (w.some((x) => x < 1)) return false; // images not sized yet
+      const gap = gapFor(rowEl.closest(".art-wall"), rowEl);
       widths = w;
       starts = [];
       let acc = 0;
       for (let i = 0; i < tiles.length; i++) {
         starts.push(acc);
-        acc += widths[i] + GAP;
+        acc += widths[i] + gap;
       }
       total = acc;
       return total > 0;

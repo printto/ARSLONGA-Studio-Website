@@ -19,6 +19,18 @@
 
     const rows = wall.querySelectorAll(".art-wall__row");
 
+    function syncGap() {
+      const rowH = rows[0] ? rows[0].getBoundingClientRect().height : 0;
+      if (rowH <= 0) return currentGap();
+      const gap = Math.max(3, Math.min(10, rowH * 0.045));
+      wall.style.setProperty("--art-wall-gap", `${gap}px`);
+      return gap;
+    }
+
+    function currentGap() {
+      return parseFloat(getComputedStyle(wall).getPropertyValue("--art-wall-gap")) || 10;
+    }
+
     function buildImages(path, from, to) {
       const images = [];
       for (let i = from; i <= to; i++) images.push(`${path}/${i}.jpg`);
@@ -26,10 +38,9 @@
     }
 
     function createSet(images, rowIndex) {
+      // display/gap come from .art-wall__set in art-wall.css.
       const set = document.createElement("div");
       set.className = "art-wall__set";
-      set.style.display = "flex";
-      set.style.gap = "10px";
 
       images.forEach((src, i) => {
         const tile = document.createElement("div");
@@ -60,9 +71,10 @@
         return;
       }
 
-      track.style.setProperty("--shift", `${setWidth}px`);
+      const gap = currentGap();
+      track.style.setProperty("--shift", `${setWidth + gap}px`);
 
-      const required = rowWidth + setWidth;
+      const required = rowWidth + setWidth + gap;
       while (track.getBoundingClientRect().width < required) {
         track.appendChild(setTemplate.cloneNode(true));
       }
@@ -99,6 +111,7 @@
       }
     }
 
+    syncGap();
     rows.forEach((rowEl, idx) => buildRow(rowEl, idx));
 
     let raf = 0;
@@ -107,6 +120,7 @@
       () => {
         cancelAnimationFrame(raf);
         raf = requestAnimationFrame(() => {
+          syncGap();
           rows.forEach((rowEl, idx) => {
             const track = rowEl.querySelector(".art-wall__track");
             const set1 = rowEl.querySelector(".art-wall__set");

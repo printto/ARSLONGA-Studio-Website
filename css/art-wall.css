@@ -50,12 +50,16 @@ body {
   z-index: 2;
 }
 
+.art-wall {
+  --art-wall-gap: 10px;
+}
+
 .art-wall__row {
   position: absolute;
   left: 0;
   right: 0;
   display: flex;
-  padding: 10px;
+  padding: var(--art-wall-gap);
   overflow: visible;
   z-index: 1;
   transition: z-index 1s;
@@ -67,10 +71,15 @@ body {
 
 .art-wall__track {
   display: flex;
-  gap: 10px;
+  gap: var(--art-wall-gap);
   width: max-content;
   will-change: transform;
   animation: artWallScrollX var(--dur, 24s) linear infinite;
+}
+
+.art-wall__set {
+  display: flex;
+  gap: var(--art-wall-gap);
 }
 
 .art-wall__row[data-reverse="1"] .art-wall__track {
@@ -95,8 +104,8 @@ body {
 .art-wall--fixed .art-wall__tile {
   position: absolute;
   left: 0;
-  top: 10px;
-  bottom: 10px;
+  top: var(--art-wall-gap);
+  bottom: var(--art-wall-gap);
   height: auto;
   /* Script drives translateX; no CSS transition, or every recycle would animate. */
   transition: none;
